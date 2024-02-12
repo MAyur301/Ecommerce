@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShopComponent } from './shop/shop.component';
     HomeComponent,
     AboutComponent,
     CartComponent,
-    ShopComponent
+    ShopComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
