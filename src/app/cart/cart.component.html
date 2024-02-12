@@ -1,1 +1,6 @@
-<p>cart works!</p>
+
+<ul *ngFor="let item of cartdata">
+  <li>{{item.productname}}</li>
+  <li>{{item.amount}}</li>
+  <li><button (click)="onadd(item)">+</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button (click)="onminus(item)">-</button></li>
+</ul>
