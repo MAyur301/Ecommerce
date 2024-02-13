@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyoderComponent } from './myoder/myoder.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutComponent,
     CartComponent,
     ShopComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MyoderComponent
   ],
   imports: [
     BrowserModule,

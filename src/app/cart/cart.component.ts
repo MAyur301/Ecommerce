@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { product } from '../login/Modal/product.modal';
 import { CartserviceService } from '../service/cartservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,7 @@ import { CartserviceService } from '../service/cartservice.service';
 export class CartComponent implements OnInit{
    cartdata:product[]=[];
    totalamount=0;
-   constructor(private cart:CartserviceService)
+   constructor(private cart:CartserviceService,private route:Router)
    {
     this.cartdata = this.cart.product;
    }
@@ -62,6 +63,13 @@ export class CartComponent implements OnInit{
   total+=value
 })
 return total;
+
+ }
+ Buyproduct()
+ {
+    alert("Buy sucessFul");
+    this.cartdata=[]
+    this.route.navigate(['/dashboard/myorder'])
 
  }
 

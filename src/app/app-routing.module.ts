@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyoderComponent } from './myoder/myoder.component';
 
 const routes: Routes = [{
   path:'',
@@ -36,6 +37,10 @@ const routes: Routes = [{
     {
       path:'cart',
       component:CartComponent
+    },
+    {
+      path:'myorder',
+      component:MyoderComponent
     }
   ]
 
