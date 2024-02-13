@@ -1,5 +1,6 @@
 export class product{
-
-  productname!:string ;
+  productname!:string;
+  productdesc!:string;
   amount!:number;
+  counter!:number;
 }

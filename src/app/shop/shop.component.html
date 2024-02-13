@@ -1,5 +1,12 @@
 <ul *ngFor="let item of productdata">
   <li>{{item.productname}}</li>
-  <li>{{item.amount}}</li>
-  <li><button (click)="addtocart(item)">Add to cart</button></li>
+  <li>${{item.amount}}</li>
+  <li><button (click)="addtocart(item)">Add to cart</button> &nbsp;  <button (click)="viewdeatils(item)">Deatils</button></li>
 </ul>
+<div *ngIf="deatils">
+  <ul >
+    <li>{{deatil?.productname}}</li>
+    <li>${{deatil?.amount}}</li>
+    <li>{{deatil?.productdesc}}</li>
+  </ul>
+</div>
