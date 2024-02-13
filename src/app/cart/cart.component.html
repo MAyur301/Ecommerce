@@ -3,7 +3,8 @@
   <li>{{item.productname}}</li>
   <li>${{item.amount}}</li>
   <li><button (click)="onadd(item)">+</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{item.counter}} <button (click)="onminus(item)">-</button></li>
-  <li><button (click)="total(item)">Total</button></li>
 </ul>
 </div>
-<p>{{totalamount }}</p>
+<hr>
+<p>Total price</p>
+<p>{{ total()}}</p>

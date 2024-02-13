@@ -20,14 +20,14 @@ export class AddtocartService {
     },
     {
       productname:"productname2",
-      amount:25,
+      amount:20,
       counter:1,
       productdesc:"This is Washing Machine"
 
   },
   {
     productname:"productname3",
-    amount:24,
+    amount:20,
     counter:1,
     productdesc:"This is Phone"
 
@@ -40,6 +40,6 @@ export class AddtocartService {
       productdesc:"This is watercooler"
 
   }
-   ]
+]
 
 }

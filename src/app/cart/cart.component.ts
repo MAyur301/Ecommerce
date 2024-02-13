@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { product } from '../login/Modal/product.modal';
 import { CartserviceService } from '../service/cartservice.service';
 
@@ -7,32 +7,28 @@ import { CartserviceService } from '../service/cartservice.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit{
    cartdata:product[]=[];
-   totalamount=0
+   totalamount=0;
    constructor(private cart:CartserviceService)
    {
-
+    this.cartdata = this.cart.product;
    }
+
   ngOnInit(): void {
-         this.cartdata = this.cart.product;
+
+         this.total();
+
   }
+
 
  onadd(item:{productname:string,amount:number,counter:number, productdesc:string})
  {
     //   this.cartdata.push(item);
-    let index = this.cartdata.indexOf(item)
+      let index = this.cartdata.indexOf(item)
     //  this.counter++;
-     console.log(index);
-     if(index == -1)
-     {
-       console.log("fail to add product");
-
-     }
-     else
-     {
           item.counter++;
-     }
+          this.total()
 
  }
  onminus(item:{productname:string,amount:number,counter:number, productdesc:string})
@@ -49,20 +45,23 @@ export class CartComponent implements OnInit {
       else
       {
           item.counter--;
+          this.total();
       }
-
-      if(item.counter <= 0)
+      if(item.counter <=0)
       {
-          this.cartdata.splice(index,1);
-
+        this.cartdata.splice(index,1)
       }
+
 
  }
-
- total(item:{productname:string,amount:number,counter:number, productdesc:string})
+ total()
  {
-
-
+  var total = 0;
+  this.cartdata.forEach((x)=>{
+  var value = x.amount * x.counter;
+  total+=value
+})
+return total;
 
  }
 
