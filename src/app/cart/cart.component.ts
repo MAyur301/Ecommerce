@@ -69,6 +69,7 @@ return total;
  {
     alert("Buy sucessFul");
     this.cartdata=[]
+    this.cart.activatedEmitter.emit(true);
     this.route.navigate(['/dashboard/myorder'])
 
  }

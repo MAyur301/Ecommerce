@@ -9,6 +9,10 @@ import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyoderComponent } from './myoder/myoder.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { MydeatilsComponent } from './mydeatils/mydeatils.component';
+
 
 const routes: Routes = [{
   path:'',
@@ -39,9 +43,24 @@ const routes: Routes = [{
       component:CartComponent
     },
     {
-      path:'myorder',
-      component:MyoderComponent
+      path:'profile',
+      component:MyprofileComponent,
+      children:[
+        {
+          path:'wishlist',
+          component:WishlistComponent,
+        },
+        {
+          path:'mydeatils',
+          component:MydeatilsComponent,
+        },
+        {
+          path:'myorder',
+          component:MyoderComponent
+        }
+      ]
     }
+
   ]
 
 },

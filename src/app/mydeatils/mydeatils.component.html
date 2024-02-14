@@ -1,0 +1,30 @@
+<div>
+<h3>Profile</h3>
+<label>Name:  </label>
+<input type="text" [value]="name">
+<br><br>
+<label>Email:  </label>
+<input type="text" [value]="email">
+<br><br>
+<label>Address:  </label>
+<div>
+<input type="text"> &nbsp; <button class="btn btn-success" (click)="address()">+</button>
+<br><br>
+</div>
+<button class="btn btn-success" (click)="edit()"> Update profile</button>
+<br><br>
+<div *ngIf="updatevalue">
+  <h3>Update Form</h3>
+  <div>
+    <h3>Profile</h3>
+    <label>Name:  </label>
+    <input type="text" name="name" value="name" [(ngModel)]="name">
+    <br><br>
+    <label>Email:  </label>
+    <input type="text" name="email" value="email" [(ngModel)]="email">
+    <br><br>
+    <label>Address:  </label>
+    <input type="text" name="address" value="address"><br>
+    <button type="button" (click)="update(name,email)">Submit</button>
+    <div>
+</div>

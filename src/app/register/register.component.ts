@@ -27,12 +27,12 @@ export class RegisterComponent implements OnInit {
       email,
       password,
     });
+
      localStorage.setItem('Data',JSON.stringify(this.Data))
      name="";
      email="",
      password="";
 
-     alert("Login Sucess " + name)
   }
 
 

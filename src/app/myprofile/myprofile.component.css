@@ -1,0 +1,31 @@
+/* Style the side navigation bar */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 140;
+  bottom: 100;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+}
+
+/* Style the links inside the navigation bar */
+.sidenav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+/* Change the color of links on hover */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 220px; /* Adjust this value to match the width of your side navigation bar */
+  padding: 20px;
+}

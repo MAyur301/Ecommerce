@@ -35,7 +35,8 @@ export class LoginComponent {
         else{
                  alert("Welcome");
                 this.route.navigate(['dashboard'])
-            }
+                sessionStorage.setItem('loggeduser',JSON.stringify(this.loginData[index]));
 
-  }
+          }
+}
 }
