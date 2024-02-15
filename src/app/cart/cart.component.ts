@@ -13,7 +13,7 @@ export class CartComponent implements OnInit{
    totalamount=0;
    constructor(private cart:CartserviceService,private route:Router)
    {
-    this.cartdata = this.cart.product;
+          this.cartdata = this.cart.product;
    }
 
   ngOnInit(): void {
@@ -57,20 +57,30 @@ export class CartComponent implements OnInit{
  }
  total()
  {
-  var total = 0;
+  this.totalamount = 0;
   this.cartdata.forEach((x)=>{
   var value = x.amount * x.counter;
-  total+=value
+  this.totalamount+=value
 })
-return total;
+return this.totalamount;
 
  }
  Buyproduct()
  {
-    alert("Buy sucessFul");
-    this.cartdata=[]
-    this.cart.activatedEmitter.emit(true);
-    this.route.navigate(['/dashboard/myorder'])
+    if(this.totalamount == 0)
+    {
+      alert("Plz add the deatils");
+
+    }
+    else{
+
+      alert("Buy sucessFul");
+      localStorage.setItem('myorder',JSON.stringify(this.cartdata))
+      this.cartdata=[]
+      this.cart.activatedEmitter.emit(true);
+    }
+
+
 
  }
 

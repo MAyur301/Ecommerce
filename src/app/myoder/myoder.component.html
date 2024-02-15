@@ -1,5 +1,5 @@
 
-<div *ngIf="Buynow">
+ <h1 *ngIf="isempty">My order is Empty</h1>
   <ul *ngFor="let item of myorder">
     <li>
       ${{item.amount}}
@@ -13,5 +13,8 @@
     <li>
       Quantity={{item.counter}}
     </li>
+    <li>
+      <button (click)="remove(item)">Remove</button>
+    </li>
   </ul>
-</div>
+

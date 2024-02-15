@@ -1,12 +1,20 @@
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="serch">Search</label>
+&nbsp;&nbsp;&nbsp;<input type="text" name="search" [value]=serch [(ngModel)]="serch"><br><br><br>
 <ul *ngFor="let item of productdata">
   <li>{{item.productname}}</li>
   <li>${{item.amount}}</li>
-  <li><button (click)="addtocart(item)">Add to cart</button> &nbsp;  <button (click)="viewdeatils(item)">Deatils</button></li>
+  <li>
+    <button (click)="addtocart(item)">Add to cart</button> &nbsp;
+    <button (click)="viewdeatils(item)">Deatils</button> &nbsp;&nbsp;&nbsp; <i class="bi bi-star" style="color: red;" (click)="addtowishlist(item)">Add to wishlist</i>
+
+  </li>
 </ul>
 <div *ngIf="deatils">
-  <ul >
+  <ul>
     <li>{{deatil?.productname}}</li>
     <li>${{deatil?.amount}}</li>
     <li>{{deatil?.productdesc}}</li>
   </ul>
 </div>
+

@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required),
+      address: new FormControl(null)
     });
   }
   Register(name: string, email: string, password: string) {
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
       name,
       email,
       password,
+
     });
 
      localStorage.setItem('Data',JSON.stringify(this.Data))

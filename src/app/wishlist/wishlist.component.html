@@ -1,1 +1,14 @@
-<p>wishlist works!</p>
+<div *ngFor="let item of product">
+<ul>
+  <li>
+     {{item.productname}}
+  </li>
+  <li>
+     {{item.amount}}
+  </li>
+  <li>
+    {{item.productdesc}}
+  </li>
+</ul>
+<button (click)="remove(item)"> Remove</button>
+</div>

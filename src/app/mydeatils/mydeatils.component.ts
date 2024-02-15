@@ -7,7 +7,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './mydeatils.component.html',
   styleUrls: ['./mydeatils.component.css']
 })
-export class MydeatilsComponent {
+ export class MydeatilsComponent {
      name!:string;
      email!:string;
      mydeatils!:register;
@@ -21,6 +21,7 @@ export class MydeatilsComponent {
         }
         this.name=this.mydeatils.name;
         this.email=this.mydeatils.email;
+
      }
 
   edit()
@@ -30,14 +31,8 @@ export class MydeatilsComponent {
   }
   update(name:string,email:string)
   {
-       let data = sessionStorage.getItem('loggeduser')
-       if(data)
-       {
-         this.mydeatils = JSON.parse(data);
-       }
-       this.mydeatils.name=name;
-       this.mydeatils.email=email;
-      this.updatevalue=false;
+    //  this.name=name;
+     // this.email=email;
   }
 
   address()

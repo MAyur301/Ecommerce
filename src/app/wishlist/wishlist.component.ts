@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WishlistService } from '../service/wishlist.service';
+import { product } from '../login/Modal/product.modal';
 
 @Component({
   selector: 'app-wishlist',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./wishlist.component.css']
 })
 export class WishlistComponent {
+  product:product[]=[]
+  constructor(private wish:WishlistService)
+  {
 
+     this.product =  this.wish.wishlist
+  }
+
+ remove(item:product)
+ {
+  let index = this.product.indexOf(item)
+  this.product.splice(index,1)
+  localStorage.setItem('wishlist',JSON.stringify(this.product))
+ }
 }
+
