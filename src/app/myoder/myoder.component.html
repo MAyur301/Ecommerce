@@ -1,5 +1,7 @@
 
- <h1 *ngIf="isempty">My order is Empty</h1>
+ <h1 *ngIf="myorder.length ===     0" style=" color: #007bff;
+ font-weight: bold;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">My order is Empty</h1>
   <ul *ngFor="let item of myorder">
     <li>
       ${{item.amount}}
@@ -18,3 +20,5 @@
     </li>
   </ul>
 
+  <br>
+  <h3 *ngIf="myorder.length >=1" style="color: blue;">Total Myorder = {{myorder.length}}</h3>

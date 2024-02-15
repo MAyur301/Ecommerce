@@ -7,10 +7,12 @@
 <input type="text" [value]="email">
 <br><br>
 <label>Address:  </label>
-<div>
-<input type="text"> &nbsp; <button class="btn btn-success" (click)="address()">+</button>
+<form>
+  <div>
+<input type="text" [value]="Address"> &nbsp; <button class="btn btn-success" (click)="address()">+</button>
 <br><br>
 </div>
+</form>
 <button class="btn btn-success" (click)="edit()"> Update profile</button>
 <br><br>
 <div *ngIf="updatevalue">

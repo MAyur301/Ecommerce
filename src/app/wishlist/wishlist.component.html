@@ -1,3 +1,7 @@
+<h3 *ngIf="product.length === 0" style=" color: #007bff;
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+">Wishlist is empty</h3>
 <div *ngFor="let item of product">
 <ul>
   <li>
@@ -12,3 +16,4 @@
 </ul>
 <button (click)="remove(item)"> Remove</button>
 </div>
+<h3 *ngIf="product.length >=1" style="color: blue;"> Total wishlist product = {{product.length}}</h3>

@@ -19,14 +19,15 @@ export class RegisterComponent implements OnInit {
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required),
-      address: new FormControl(null)
+      Address: new FormControl(null)
     });
   }
-  Register(name: string, email: string, password: string) {
+  Register(name: string, email: string, password: string, Address:string) {
     this.Data.push({
       name,
       email,
       password,
+      Address
 
     });
 

@@ -1,3 +1,4 @@
+import { CanActivate } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
@@ -12,15 +13,19 @@ import { MyoderComponent } from './myoder/myoder.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { MydeatilsComponent } from './mydeatils/mydeatils.component';
+import { authguard } from './myoder/guard/authguard.service';
+import { loginauth } from './myoder/guard/loginauth.service';
 
 
 const routes: Routes = [{
   path:'',
-  component:RegisterComponent
+  component:RegisterComponent,
+  canActivate:[authguard]
 },
 {
    path:'login',
-   component:LoginComponent
+   component:LoginComponent,
+   canActivate:[authguard],
 },
 {
   path:'dashboard',
@@ -62,6 +67,7 @@ const routes: Routes = [{
     }
 
   ]
+  ,canActivate:[loginauth],
 
 },
 {

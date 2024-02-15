@@ -19,9 +19,10 @@ export class MyprofileComponent {
        if(r==true)
        {
         sessionStorage.removeItem('loggeduser');
+        sessionStorage.removeItem('authkey');
         this.Route.navigate([""])
        }
-       
+
 
   }
 
