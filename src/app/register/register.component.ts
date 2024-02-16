@@ -35,7 +35,8 @@ export class RegisterComponent implements OnInit {
      name="";
      email="",
      password="";
-
+     alert("Register is done");
+     this.Route.navigate(['/login'])
   }
 
 
