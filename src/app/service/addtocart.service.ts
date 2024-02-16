@@ -40,6 +40,13 @@ export class AddtocartService {
       counter:0,
       productdesc:"This is watercooler"
 
+  },
+  {
+    productname:"productname5",
+    amount:25,
+    counter:0,
+    productdesc:"This is watercooler"
+
   }
 ]
 getBranch()

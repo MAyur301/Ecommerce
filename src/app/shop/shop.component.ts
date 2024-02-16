@@ -12,11 +12,17 @@ import { map } from 'rxjs';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css'],
 })
-export class ShopComponent implements OnInit,DoCheck {
+export class ShopComponent implements OnInit, DoCheck {
   productdata!: product[];
   deatils = false;
   deatil: product | null = null;
-  serch!:string;
+  serch!: string;
+  temp!: product;
+  high!:product[];
+  low!:product[];
+  normal=true;
+  highp=true;
+  lowp=true;
   constructor(
     private route: Router,
     private product: AddtocartService,
@@ -24,17 +30,13 @@ export class ShopComponent implements OnInit,DoCheck {
     private wish: WishlistService
   ) {
 
-    console.log(this.serch);
-
   }
 
   ngOnInit(): void {
     this.productdata = this.product.productdata;
   }
   ngDoCheck(): void {
-
     this.getserchproduct();
-
   }
 
   addtocart(item: {
@@ -63,35 +65,69 @@ export class ShopComponent implements OnInit,DoCheck {
     //  console.log(this.deatils);
     this.deatil = item;
   }
-  addtowishlist(item: product) {
 
-    let r = confirm("Are youn sure to Add in wishlist")
-    if(r == true)
-    {
+  addtowishlist(item: product) {
+    let r = confirm('Are youn sure to Add in wishlist');
+    if (r == true) {
       this.wish.wishlist.push(item);
-      alert("Add to wilish");
-      localStorage.setItem('wishlist',JSON.stringify(this.productdata))
-      this.route.navigate(['/dashboard/profile/wishlist'])
+      alert('Add to wilish');
+      localStorage.setItem('wishlist', JSON.stringify(this.wish.wishlist));
+      //  this.route.navigate(['/dashboard/profile/wishlist'])
+    }
+  }
+  highprice() {
+    this.normal=false;
+    this.lowp=false;
+    this.highp=true;
+    for (let i = 0; i < this.productdata.length; i++) {
+      for (let j = 0; j < i; j++) {
+        if (this.productdata[i].amount > this.productdata[j].amount) {
+          this.temp = this.productdata[i];
+          this.productdata[i] = this.productdata[j];
+          this.productdata[j] = this.temp;
+        }
+      }
+    }
+    this.high = this.productdata
+  }
+  lowtohigh()
+  {
+    this.normal=false;
+    this.highp=false;
+    this.lowp=true;
+    for (let i = 0; i < this.productdata.length; i++) {
+      for (let j = 0; j < i; j++) {
+        if (this.productdata[i].amount < this.productdata[j].amount) {
+          this.temp = this.productdata[i];
+          this.productdata[i] = this.productdata[j];
+          this.productdata[j] = this.temp;
+        }
+      }
     }
 
+  this.low=    this.productdata ;
 
   }
 
-  getserchproduct()
-  {
-    this.product.getBranch().pipe(
-      map((val) => {
-        return val.filter((brn) => {
-          if (this.serch) {
-            return brn.productname === this.serch;
-          } else {
-            return brn;
-          }
+  getserchproduct() {
+    this.product
+      .getBranch()
+      .pipe(
+        map((val) => {
+          return val.filter((brn) => {
+            if (this.serch) {
+              return brn.productname === this.serch;
+            } else {
+              return brn;
+            }
+          });
         })
-      })
-    ).subscribe(res =>
-      {
+      )
+      .subscribe((res) => {
         this.productdata = res;
-      })
+      });
   }
+
+
+
 }

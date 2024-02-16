@@ -3,9 +3,10 @@
   <li>{{item.productname}}</li>
   <li>${{item.amount}}</li>
   <li><button (click)="onadd(item)">+</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{item.counter}} <button (click)="onminus(item)">-</button></li>
+  <hr>
 </ul>
 </div>
 <hr>
-<p>Total price</p>
+<p class="alert alert-info" style="font-size: 30px;"> Total price</p>
 <p>{{ total()}}</p>
-<button (click)="Buyproduct()"> Buy now</button>
+<button  class="btn btn-success"  (click)="Buyproduct()"> Buy now</button>

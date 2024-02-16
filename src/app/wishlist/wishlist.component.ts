@@ -12,7 +12,11 @@ export class WishlistComponent {
   constructor(private wish:WishlistService)
   {
 
-     this.product =  this.wish.wishlist
+        let data  =  localStorage.getItem('wishlist')
+        if(data)
+        {
+            this.product = JSON.parse(data);
+        }
   }
 
  remove(item:product)

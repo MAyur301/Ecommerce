@@ -1,15 +1,47 @@
 <br>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-filter">Filter</i>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item bi bi-person" (click)="highprice()">price high-low</a></li>
+    <li><a class="dropdown-item bi bi-person" (click)="lowtohigh()">price low-high</a></li>
+  </ul>
+</div>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="serch">Search</label>
 &nbsp;&nbsp;&nbsp;<input type="text" name="search" [value]=serch [(ngModel)]="serch"><br><br><br>
+<div *ngIf="normal">
 <ul *ngFor="let item of productdata">
   <li>{{item.productname}}</li>
   <li>${{item.amount}}</li>
   <li>
-    <button (click)="addtocart(item)">Add to cart</button> &nbsp;
-    <button (click)="viewdeatils(item)">Deatils</button> &nbsp;&nbsp;&nbsp; <i class="bi bi-star" style="color: red;" (click)="addtowishlist(item)">Add to wishlist</i>
-
+    <button  class="btn btn-success" (click)="addtocart(item)">Add to cart</button> &nbsp;
+    <button  class="btn btn-primary"     (click)="viewdeatils(item)">Deatils</button> &nbsp;&nbsp;&nbsp; <i class="bi bi-star" style="color: red;" (click)="addtowishlist(item)">Add to wishlist</i>
   </li>
 </ul>
+</div>
+<div *ngIf="lowp">
+<ul *ngFor="let item of low">
+  <li>{{item.productname}}</li>
+  <li>${{item.amount}}</li>
+  <li>
+    <button  class="btn btn-success" (click)="addtocart(item)">Add to cart</button> &nbsp;
+    <button  class="btn btn-primary"     (click)="viewdeatils(item)">Deatils</button> &nbsp;&nbsp;&nbsp; <i class="bi bi-star" style="color: red;" (click)="addtowishlist(item)">Add to wishlist</i>
+  </li>
+</ul>
+</div>
+<div *ngIf="highp">
+  <ul *ngFor="let item of high">
+    <li>{{item.productname}}</li>
+    <li>${{item.amount}}</li>
+    <li>
+      <button  class="btn btn-success" (click)="addtocart(item)">Add to cart</button> &nbsp;
+      <button  class="btn btn-primary"     (click)="viewdeatils(item)">Deatils</button> &nbsp;&nbsp;&nbsp; <i class="bi bi-star" style="color: red;" (click)="addtowishlist(item)">Add to wishlist</i>
+    </li>
+  </ul>
+  </div>
+<hr>
 <div *ngIf="deatils">
   <ul>
     <li>{{deatil?.productname}}</li>
@@ -17,4 +49,6 @@
     <li>{{deatil?.productdesc}}</li>
   </ul>
 </div>
+
+
 

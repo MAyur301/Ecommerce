@@ -14,6 +14,6 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     {{item.productdesc}}
   </li>
 </ul>
-<button (click)="remove(item)"> Remove</button>
+<button class="btn btn-danger" (click)="remove(item)"> Remove</button>
 </div>
 <h3 *ngIf="product.length >=1" style="color: blue;"> Total wishlist product = {{product.length}}</h3>
