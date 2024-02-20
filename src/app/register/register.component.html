@@ -29,11 +29,10 @@
                   <input type="text" id="form3Example4cg" class="form-control form-control-lg" formControlName="Address"  #Address/>
                   <label class="form-label" for="form3Example4cg">Address</label>
                 </div>
-
-
+                <input type="hidden" #role>
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="register.invalid"    (click)="Register(name.value,email.value,password.value,Address.value)">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="register.invalid"    (click)="Register(name.value,email.value,password.value,Address.value,role.value)">Register</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="login"

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +16,8 @@ import { MyoderComponent } from './myoder/myoder.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { MydeatilsComponent } from './mydeatils/mydeatils.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+
 
 
 
@@ -35,14 +37,14 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     MyprofileComponent,
     MydeatilsComponent,
     WishlistComponent,
-
-
+    AddproductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

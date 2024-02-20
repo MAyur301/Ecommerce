@@ -4,4 +4,5 @@ export class register {
      email!:string ;
      password!: string ;
      Address!:string;
+     role!:string;
 }

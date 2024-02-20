@@ -6,6 +6,7 @@ import { CartComponent } from '../cart/cart.component';
 import { CartserviceService } from '../service/cartservice.service';
 import { WishlistService } from '../service/wishlist.service';
 import { map } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-shop',
@@ -23,6 +24,10 @@ export class ShopComponent implements OnInit, DoCheck {
   normal=true;
   highp=true;
   lowp=true;
+  addproduct=false;
+  addnewproduct!:FormGroup;
+rotate_right: any;
+
   constructor(
     private route: Router,
     private product: AddtocartService,
@@ -39,12 +44,7 @@ export class ShopComponent implements OnInit, DoCheck {
     this.getserchproduct();
   }
 
-  addtocart(item: {
-    productname: string;
-    amount: number;
-    counter: number;
-    productdesc: string;
-  }) {
+  addtocart(item: product) {
     //  alert("Add to cart");
     //  console.log(item);
 
@@ -55,6 +55,7 @@ export class ShopComponent implements OnInit, DoCheck {
       item.counter++;
     }
   }
+
   viewdeatils(item: {
     productname: string;
     amount: number;
@@ -127,7 +128,8 @@ export class ShopComponent implements OnInit, DoCheck {
         this.productdata = res;
       });
   }
-
-
-
+  AddnewProduct()
+  {
+     this.route.navigate(['/dashboard/anp'])
+  }
 }

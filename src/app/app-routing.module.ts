@@ -15,6 +15,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { MydeatilsComponent } from './mydeatils/mydeatils.component';
 import { authguard } from './myoder/guard/authguard.service';
 import { loginauth } from './myoder/guard/loginauth.service';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 
 const routes: Routes = [{
@@ -46,6 +47,10 @@ const routes: Routes = [{
     {
       path:'cart',
       component:CartComponent
+    },
+    {
+      path:'anp',
+      component:AddproductComponent
     },
     {
       path:'profile',

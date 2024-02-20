@@ -9,7 +9,16 @@ import { register } from '../login/Modal/Register.model';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  Data: register[] = [];
+  Data: register[] = [
+    {
+      name:'mayur',
+      email:'mayur@123',
+      password:'1234',
+      Address:'vastral',
+      role:'Admin',
+    }
+  ];
+
   constructor(private Route: Router) {}
 
   register!: FormGroup;
@@ -22,13 +31,13 @@ export class RegisterComponent implements OnInit {
       Address: new FormControl(null)
     });
   }
-  Register(name: string, email: string, password: string, Address:string) {
+  Register(name: string, email: string, password: string, Address:string,role:string) {
     this.Data.push({
       name,
       email,
       password,
-      Address
-
+      Address,
+      role:"basicrole"
     });
 
      localStorage.setItem('Data',JSON.stringify(this.Data))

@@ -17,4 +17,7 @@ export class CartserviceService {
       //console.log(this.Buynow);
     });
   }
+  clearData(){
+    this.product=[]
+  }
 }

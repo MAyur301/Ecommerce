@@ -1,4 +1,7 @@
+<button class="btn btn-primary" style="margin-left:900px; margin-top:30px;" (click)="AddnewProduct()">AddNewProduct</button>
 <br>
+
+<div>
 <div class="btn-group">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     <i class="bi bi-filter">Filter</i>
@@ -7,10 +10,13 @@
     <li><a class="dropdown-item bi bi-person" (click)="highprice()">price high-low</a></li>
     <li><a class="dropdown-item bi bi-person" (click)="lowtohigh()">price low-high</a></li>
   </ul>
-</div>
 
+</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="serch">Search</label>
 &nbsp;&nbsp;&nbsp;<input type="text" name="search" [value]=serch [(ngModel)]="serch"><br><br><br>
+
+</div>
+
 <div *ngIf="normal">
 <ul *ngFor="let item of productdata">
   <li>{{item.productname}}</li>
